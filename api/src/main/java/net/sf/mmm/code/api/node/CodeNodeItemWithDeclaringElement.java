@@ -4,6 +4,7 @@ package net.sf.mmm.code.api.node;
 
 import net.sf.mmm.code.api.element.CodeElement;
 import net.sf.mmm.code.api.item.CodeItemWithDeclaringType;
+import net.sf.mmm.code.api.type.CodeReadableType;
 import net.sf.mmm.code.api.type.CodeType;
 
 /**
@@ -20,7 +21,7 @@ public abstract interface CodeNodeItemWithDeclaringElement extends CodeItemWithD
   CodeElement getDeclaringElement();
 
   @Override
-  default CodeType getDeclaringType() {
+  default CodeReadableType getDeclaringType() {
 
     CodeElement element = getDeclaringElement();
     if (element instanceof CodeType) {

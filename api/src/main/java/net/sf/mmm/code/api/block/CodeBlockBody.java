@@ -16,4 +16,10 @@ public interface CodeBlockBody extends CodeBlock {
   @Override
   CodeFunction getParent();
 
+  @Override
+  CodeBlockBody getImmutable();
+
+  @Override
+  CodeBlockBody copy();
+
 }

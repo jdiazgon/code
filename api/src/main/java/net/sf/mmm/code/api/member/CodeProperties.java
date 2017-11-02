@@ -28,6 +28,9 @@ public interface CodeProperties<P extends CodeProperty> extends CodeMembers<P>, 
   }
 
   @Override
+  CodeProperties<P> getImmutable();
+
+  @Override
   CodeProperties<P> copy();
 
 }

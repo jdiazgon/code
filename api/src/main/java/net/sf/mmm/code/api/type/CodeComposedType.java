@@ -47,6 +47,9 @@ public interface CodeComposedType extends CodeGenericType {
   }
 
   @Override
+  CodeComposedType getImmutable();
+
+  @Override
   CodeComposedType copy();
 
 }

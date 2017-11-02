@@ -19,6 +19,9 @@ public abstract interface CodeMembers<M extends CodeMember> extends CodeNodeItem
   CodeType getParent();
 
   @Override
+  CodeMembers<M> getImmutable();
+
+  @Override
   CodeMembers<M> copy();
 
 }

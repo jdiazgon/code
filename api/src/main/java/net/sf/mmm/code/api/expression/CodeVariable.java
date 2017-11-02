@@ -2,7 +2,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.code.api.expression;
 
-import net.sf.mmm.code.api.item.CodeItemWithName;
+import net.sf.mmm.code.api.item.CodeReadableItemWithName;
 import net.sf.mmm.code.api.item.CodeItemWithType;
 
 /**
@@ -12,6 +12,6 @@ import net.sf.mmm.code.api.item.CodeItemWithType;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract interface CodeVariable extends CodeExpression, CodeItemWithName, CodeItemWithType {
+public abstract interface CodeVariable extends CodeExpression, CodeReadableItemWithName, CodeItemWithType {
 
 }

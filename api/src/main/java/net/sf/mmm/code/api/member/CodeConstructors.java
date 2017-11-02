@@ -32,6 +32,9 @@ public interface CodeConstructors<C extends CodeConstructor> extends CodeOperati
   C add();
 
   @Override
+  CodeConstructors<C> getImmutable();
+
+  @Override
   CodeConstructors<C> copy();
 
 }

@@ -16,6 +16,9 @@ import net.sf.mmm.code.api.CodeWithContext;
 public interface CodeChildItem extends CodeMutableItem, CodeWithContext {
 
   @Override
+  CodeChildItem getImmutable();
+
+  @Override
   CodeChildItem copy();
 
 }

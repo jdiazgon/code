@@ -3,7 +3,6 @@
 package net.sf.mmm.code.api.item;
 
 import net.sf.mmm.code.api.comment.CodeComment;
-import net.sf.mmm.util.exception.api.ReadOnlyException;
 
 /**
  * {@link CodeItem} that has an optional {@link #getComment() comment}.
@@ -15,7 +14,6 @@ public abstract interface CodeMutableItemWithComment extends CodeMutableItem, Co
 
   /**
    * @param comment the new {@link #getComment() comment}.
-   * @throws ReadOnlyException if {@link #isImmutable() immutable}.
    */
   void setComment(CodeComment comment);
 

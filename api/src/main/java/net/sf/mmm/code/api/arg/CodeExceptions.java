@@ -46,6 +46,9 @@ public abstract interface CodeExceptions<E extends CodeException> extends CodeOp
   }
 
   @Override
+  CodeExceptions<E> getImmutable();
+
+  @Override
   CodeExceptions<E> copy();
 
 }

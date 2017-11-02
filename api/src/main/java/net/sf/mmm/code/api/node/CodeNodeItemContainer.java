@@ -3,7 +3,7 @@
 package net.sf.mmm.code.api.node;
 
 import net.sf.mmm.code.api.item.CodeItem;
-import net.sf.mmm.code.api.item.CodeItemWithDeclaringType;
+import net.sf.mmm.code.api.item.CodeMutableItem;
 
 /**
  * {@link CodeItem} containing {@link CodeItem}s of a particular type. It groups these items and all the
@@ -18,7 +18,7 @@ import net.sf.mmm.code.api.item.CodeItemWithDeclaringType;
  * @param <I> the type of the contained {@link CodeItem}s.
  * @since 1.0.0
  */
-public abstract interface CodeNodeItemContainer<I extends CodeItem> extends CodeNodeItem, CodeNodeContainer<I>, CodeItemWithDeclaringType {
+public abstract interface CodeNodeItemContainer<I extends CodeMutableItem> extends CodeReadableNodeItemContainer<I>, CodeNodeItem {
 
   /**
    * @param item the child item to remove.
@@ -27,6 +27,6 @@ public abstract interface CodeNodeItemContainer<I extends CodeItem> extends Code
   boolean remove(I item);
 
   @Override
-  CodeNodeItemContainer<I> copy();
+  CodeReadableNodeItemContainer<? super I> getImmutable();
 
 }

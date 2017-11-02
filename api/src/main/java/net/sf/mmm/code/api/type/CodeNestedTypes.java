@@ -20,6 +20,9 @@ public abstract interface CodeNestedTypes<T extends CodeType> extends CodeNodeIt
   T getParent();
 
   @Override
+  CodeNestedTypes<T> getImmutable();
+
+  @Override
   CodeNestedTypes<T> copy();
 
 }

@@ -22,6 +22,9 @@ public abstract interface CodeNodeItemContainerHierarchical<I extends CodeItem> 
   Iterable<? extends I> getAll();
 
   @Override
+  CodeNodeItemContainerHierarchical<I> getImmutable();
+
+  @Override
   CodeNodeItemContainerHierarchical<I> copy();
 
 }

@@ -3,10 +3,10 @@
 package net.sf.mmm.code.api.node;
 
 import net.sf.mmm.code.api.item.CodeItem;
-import net.sf.mmm.code.api.item.CodeItemWithName;
+import net.sf.mmm.code.api.item.CodeReadableItemWithName;
 
 /**
- * {@link CodeNodeItemContainerHierarchical} containing {@link CodeItemWithName#getName() named}
+ * {@link CodeNodeItemContainerHierarchical} containing {@link CodeReadableItemWithName#getName() named}
  * {@link CodeItem}s of a particular type.
  *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
@@ -20,6 +20,9 @@ public abstract interface CodeNodeItemContainerFlatWithName<I extends CodeItem> 
 
     return getDeclared(name);
   }
+
+  @Override
+  CodeNodeItemContainerFlatWithName<I> getImmutable();
 
   @Override
   CodeNodeItemContainerFlatWithName<I> copy();

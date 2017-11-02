@@ -2,18 +2,22 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.code.api.item;
 
+import net.sf.mmm.code.api.element.CodeElement;
+
 /**
- * {@link CodeItem} that has a {@link #getName() name}.
+ * {@link CodeElement} that has a {@link #getName() name}.
  *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract interface CodeItemWithName extends CodeItem {
+public abstract interface CodeItemWithName extends CodeMutableItem, CodeReadableItemWithName {
 
   /**
-   * @return the simple name of this element.
-   * @see Class#getSimpleName()
+   * @param name the new {@link #getName() name}.
    */
-  String getName();
+  void setName(String name);
+
+  @Override
+  CodeReadableItemWithName getImmutable();
 
 }

@@ -4,17 +4,17 @@ package net.sf.mmm.code.api.member;
 
 import java.lang.reflect.AccessibleObject;
 
-import net.sf.mmm.code.api.element.CodeElementWithModifiers;
-import net.sf.mmm.code.api.element.CodeElementWithName;
+import net.sf.mmm.code.api.item.CodeItemWithName;
+import net.sf.mmm.code.api.item.CodeItemWithModifiers;
 
 /**
- * {@link CodeElementWithModifiers} representing a {@link java.lang.reflect.Member} of a
+ * {@link CodeItemWithModifiers} representing a {@link java.lang.reflect.Member} of a
  * {@link net.sf.mmm.code.api.type.CodeType} that is either a {@link CodeOperation} or a {@link CodeField}.
  *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract interface CodeMember extends CodeElementWithModifiers, CodeElementWithName {
+public abstract interface CodeMember extends CodeItemWithModifiers, CodeItemWithName {
 
   @Override
   CodeMembers<?> getParent();
@@ -24,6 +24,9 @@ public abstract interface CodeMember extends CodeElementWithModifiers, CodeEleme
    */
   @Override
   AccessibleObject getReflectiveObject();
+
+  @Override
+  CodeMember getImmutable();
 
   @Override
   CodeMember copy();

@@ -2,8 +2,6 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.code.api.type;
 
-import java.lang.reflect.TypeVariable;
-
 import net.sf.mmm.code.api.node.CodeNodeItemWithDeclaringOperation;
 
 /**
@@ -19,7 +17,7 @@ import net.sf.mmm.code.api.node.CodeNodeItemWithDeclaringOperation;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public interface CodeTypeVariable extends CodeTypePlaceholder, CodeNodeItemWithDeclaringOperation {
+public interface CodeTypeVariable extends CodeReadableTypeVariable, CodeTypePlaceholder, CodeNodeItemWithDeclaringOperation {
 
   @Override
   CodeTypeVariables<?> getParent();
@@ -43,7 +41,7 @@ public interface CodeTypeVariable extends CodeTypePlaceholder, CodeNodeItemWithD
   }
 
   @Override
-  TypeVariable<?> getReflectiveObject();
+  CodeReadableTypeVariable getImmutable();
 
   @Override
   CodeTypeVariable copy();

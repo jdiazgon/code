@@ -14,6 +14,9 @@ import net.sf.mmm.code.api.node.CodeNodeItemContainerHierarchicalWithName;
 public interface CodeFields<F extends CodeField> extends CodeMembers<F>, CodeNodeItemContainerHierarchicalWithName<F> {
 
   @Override
+  CodeFields<F> getImmutable();
+
+  @Override
   CodeFields<F> copy();
 
 }

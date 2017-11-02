@@ -17,7 +17,7 @@ import net.sf.mmm.code.api.node.CodeNodeItemContainerHierarchical;
  * @param <T> the type of the contained {@link CodeGenericType}s.
  * @since 1.0.0
  */
-public interface CodeSuperTypes<T extends CodeGenericType> extends CodeNodeItemContainerHierarchical<T> {
+public interface CodeSuperTypes<T extends CodeGenericType> extends CodeReadableSuperTypes, CodeNodeItemContainerHierarchical<T> {
 
   @Override
   CodeType getParent();
@@ -52,6 +52,9 @@ public interface CodeSuperTypes<T extends CodeGenericType> extends CodeNodeItemC
    * @param superType the {@link CodeGenericType} to add.
    */
   void add(CodeGenericType superType);
+
+  @Override
+  CodeSuperTypes<T> getImmutable();
 
   @Override
   CodeSuperTypes<T> copy();

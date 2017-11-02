@@ -40,6 +40,9 @@ public abstract interface CodeOperation extends CodeMember, CodeElementWithTypeV
   Executable getReflectiveObject();
 
   @Override
+  CodeOperation getImmutable();
+
+  @Override
   CodeOperation copy();
 
 }

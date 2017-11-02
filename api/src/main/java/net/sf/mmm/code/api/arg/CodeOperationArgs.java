@@ -22,6 +22,9 @@ public abstract interface CodeOperationArgs<A extends CodeOperationArg> extends 
   CodeOperation getParent();
 
   @Override
+  CodeOperationArgs<A> getImmutable();
+
+  @Override
   CodeOperationArgs<A> copy();
 
 }

@@ -50,6 +50,9 @@ public interface CodeMethod extends CodeOperation {
   Method getReflectiveObject();
 
   @Override
+  CodeMethod getImmutable();
+
+  @Override
   CodeMethod copy();
 
 }

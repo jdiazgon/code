@@ -16,4 +16,10 @@ import net.sf.mmm.code.api.node.CodeNodeItemWithDeclaringOperation;
  */
 public abstract interface CodeOperationArg extends CodeElement, CodeMutableItemWithType, CodeNodeItemWithDeclaringOperation {
 
+  @Override
+  CodeOperationArg getImmutable();
+
+  @Override
+  CodeOperationArg copy();
+
 }

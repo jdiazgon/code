@@ -2,7 +2,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.code.api.type;
 
-import net.sf.mmm.code.api.element.CodeElementWithName;
+import net.sf.mmm.code.api.item.CodeItemWithName;
 import net.sf.mmm.code.api.node.CodeNodeItem;
 import net.sf.mmm.util.exception.api.ReadOnlyException;
 
@@ -17,7 +17,7 @@ import net.sf.mmm.util.exception.api.ReadOnlyException;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract interface CodeTypePlaceholder extends CodeGenericType, CodeElementWithName {
+public abstract interface CodeTypePlaceholder extends CodeGenericType, CodeReadableTypePlaceholder, CodeItemWithName {
 
   /** {@link #getName() Name} of a {@link #isWildcard() wildcard}. */
   String NAME_WILDCARD = "?";
@@ -29,6 +29,7 @@ public abstract interface CodeTypePlaceholder extends CodeGenericType, CodeEleme
    * @return {@code true} if this type placeholder extends a given {@link #getBound() bound} (e.g.
    *         "{@code T extends String}"), {@code false} otherwise (if {@link #isSuper() super}).
    */
+  @Override
   boolean isExtends();
 
   /**
@@ -37,6 +38,7 @@ public abstract interface CodeTypePlaceholder extends CodeGenericType, CodeEleme
    *         {@link #isExtends() extends}). So far only {@link #isWildcard() wildcards} can return
    *         {@code true} here.
    */
+  @Override
   default boolean isSuper() {
 
     return !isExtends();
@@ -46,12 +48,14 @@ public abstract interface CodeTypePlaceholder extends CodeGenericType, CodeEleme
    * @return {@code true} if this is a {@link CodeTypeWildcard} (e.g. "{@code ? super String}"), {@code false}
    *         if a {@link CodeTypeVariable} (e.g. "{@code T extends Number}").
    */
+  @Override
   boolean isWildcard();
 
   /**
    * @return the {@link CodeGenericType} representing the {@link java.lang.reflect.TypeVariable#getBounds()
    *         bound(s)} of this type placeholder. May be a {@link CodeComposedType} to specify multiple bounds.
    */
+  @Override
   CodeGenericType getBound();
 
   /**
@@ -79,6 +83,9 @@ public abstract interface CodeTypePlaceholder extends CodeGenericType, CodeEleme
   @Deprecated
   @Override
   CodeGenericTypeParameters<?> getTypeParameters();
+
+  @Override
+  CodeReadableTypePlaceholder getImmutable();
 
   @Override
   CodeTypePlaceholder copy();

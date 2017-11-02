@@ -40,6 +40,9 @@ public interface CodeTypeWildcard extends CodeTypePlaceholder {
   WildcardType getReflectiveObject();
 
   @Override
+  CodeTypeWildcard getImmutable();
+
+  @Override
   CodeTypeWildcard copy();
 
 }

@@ -2,8 +2,6 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.code.api.element;
 
-import java.lang.reflect.GenericDeclaration;
-
 import net.sf.mmm.code.api.type.CodeTypeVariables;
 
 /**
@@ -12,18 +10,12 @@ import net.sf.mmm.code.api.type.CodeTypeVariables;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract interface CodeElementWithTypeVariables extends CodeElement {
+public abstract interface CodeElementWithTypeVariables extends CodeReadableElementWithTypeVariables, CodeElement {
 
-  /**
-   * @return the {@link CodeTypeVariables} containing the {@link net.sf.mmm.code.api.type.CodeTypeVariable}s.
-   *         May be empty but never {@code null}.
-   */
+  @Override
   CodeTypeVariables<?> getTypeParameters();
 
   @Override
-  GenericDeclaration getReflectiveObject();
-
-  @Override
-  CodeElementWithTypeVariables copy();
+  CodeReadableElementWithTypeVariables getImmutable();
 
 }

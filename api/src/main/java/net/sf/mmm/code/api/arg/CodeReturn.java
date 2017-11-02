@@ -24,6 +24,9 @@ public interface CodeReturn extends CodeOperationArg {
   AnnotatedType getReflectiveObject();
 
   @Override
+  CodeReturn getImmutable();
+
+  @Override
   CodeReturn copy();
 
 }

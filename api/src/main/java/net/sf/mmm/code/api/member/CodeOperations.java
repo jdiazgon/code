@@ -19,6 +19,9 @@ public abstract interface CodeOperations<O extends CodeOperation> extends CodeMe
   O get(O operation);
 
   @Override
+  CodeOperations<O> getImmutable();
+
+  @Override
   CodeOperations<O> copy();
 
 }

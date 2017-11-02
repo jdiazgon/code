@@ -17,6 +17,9 @@ public interface CodeTypeParameters<P extends CodeGenericType> extends CodeGener
   CodeParameterizedType getParent();
 
   @Override
+  CodeTypeParameters<P> getImmutable();
+
+  @Override
   CodeTypeParameters<P> copy();
 
 }

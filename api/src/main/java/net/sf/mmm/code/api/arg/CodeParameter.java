@@ -4,8 +4,8 @@ package net.sf.mmm.code.api.arg;
 
 import java.lang.reflect.Parameter;
 
-import net.sf.mmm.code.api.element.CodeElementWithName;
 import net.sf.mmm.code.api.expression.CodeVariable;
+import net.sf.mmm.code.api.item.CodeItemWithName;
 import net.sf.mmm.code.api.member.CodeOperation;
 import net.sf.mmm.util.exception.api.ReadOnlyException;
 
@@ -17,7 +17,7 @@ import net.sf.mmm.util.exception.api.ReadOnlyException;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public interface CodeParameter extends CodeOperationArg, CodeElementWithName, CodeVariable {
+public interface CodeParameter extends CodeOperationArg, CodeItemWithName, CodeVariable {
 
   @Override
   CodeParameters<?> getParent();
@@ -41,6 +41,9 @@ public interface CodeParameter extends CodeOperationArg, CodeElementWithName, Co
 
   @Override
   Parameter getReflectiveObject();
+
+  @Override
+  CodeParameter getImmutable();
 
   @Override
   CodeParameter copy();

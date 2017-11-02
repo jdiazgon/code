@@ -31,6 +31,9 @@ public abstract interface CodeGenericTypeParameters<P extends CodeGenericType> e
   void add(P parameter);
 
   @Override
+  CodeGenericTypeParameters<P> getImmutable();
+
+  @Override
   CodeGenericTypeParameters<P> copy();
 
 }

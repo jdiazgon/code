@@ -67,6 +67,9 @@ public abstract interface CodeParameters<P extends CodeParameter> extends CodeOp
   }
 
   @Override
+  CodeParameters<P> getImmutable();
+
+  @Override
   CodeParameters<P> copy();
 
 }

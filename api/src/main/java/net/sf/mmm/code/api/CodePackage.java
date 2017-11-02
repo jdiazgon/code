@@ -70,6 +70,9 @@ public interface CodePackage extends CodePathElement, CodeContainer {
   }
 
   @Override
+  CodePackage getImmutable();
+
+  @Override
   CodePackage copy();
 
 }

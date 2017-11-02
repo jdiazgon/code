@@ -99,6 +99,9 @@ public abstract interface CodeProperty extends CodeMember, CodeMutableItemWithTy
   CodeProperty inherit(CodeType declaring);
 
   @Override
+  CodeProperty getImmutable();
+
+  @Override
   CodeProperty copy();
 
   /**

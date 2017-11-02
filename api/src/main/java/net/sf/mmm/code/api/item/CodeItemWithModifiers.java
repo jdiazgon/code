@@ -2,19 +2,26 @@
  * http://www.apache.org/licenses/LICENSE-2.0 */
 package net.sf.mmm.code.api.item;
 
+import net.sf.mmm.code.api.element.CodeElement;
 import net.sf.mmm.code.api.modifier.CodeModifiers;
 
 /**
- * {@link CodeItem} that has {@link #getModifiers() modifiers}.
+ * {@link CodeElement} that has {@link #getModifiers() modifiers}.
  *
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public abstract interface CodeItemWithModifiers extends CodeItem {
+public abstract interface CodeItemWithModifiers extends CodeMutableItem, CodeReadableItemWithModifiers {
 
   /**
-   * @return the {@link CodeModifiers} of this element.
+   * @param modifiers the new {@link #getModifiers() modifiers}.
    */
-  CodeModifiers getModifiers();
+  void setModifiers(CodeModifiers modifiers);
+
+  @Override
+  CodeReadableItemWithModifiers getImmutable();
+
+  @Override
+  CodeItemWithModifiers copy();
 
 }

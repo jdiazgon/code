@@ -39,6 +39,9 @@ public interface CodeTypeVariables<V extends CodeTypeVariable> extends CodeGener
   V get(String name, boolean includeParents);
 
   @Override
+  CodeTypeVariables<V> getImmutable();
+
+  @Override
   CodeTypeVariables<V> copy();
 
 }

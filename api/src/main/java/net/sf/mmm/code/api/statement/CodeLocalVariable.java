@@ -4,7 +4,7 @@ package net.sf.mmm.code.api.statement;
 
 import net.sf.mmm.code.api.expression.CodeExpression;
 import net.sf.mmm.code.api.expression.CodeVariable;
-import net.sf.mmm.code.api.item.CodeItemWithModifiers;
+import net.sf.mmm.code.api.item.CodeReadableItemWithModifiers;
 import net.sf.mmm.code.api.modifier.CodeModifiers;
 
 /**
@@ -16,7 +16,7 @@ import net.sf.mmm.code.api.modifier.CodeModifiers;
  * @author Joerg Hohwiller (hohwille at users.sourceforge.net)
  * @since 1.0.0
  */
-public interface CodeLocalVariable extends CodeVariable, CodeItemWithModifiers, CodeAssignment {
+public interface CodeLocalVariable extends CodeVariable, CodeReadableItemWithModifiers, CodeAssignment {
 
   /**
    * @return true if {@link CodeModifiers#isFinal() final}.

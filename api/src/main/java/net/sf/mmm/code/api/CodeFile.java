@@ -51,4 +51,10 @@ public abstract interface CodeFile extends CodePathElement {
   @Override
   Class<?> getReflectiveObject();
 
+  @Override
+  CodeFile getImmutable();
+
+  @Override
+  CodeFile copy();
+
 }

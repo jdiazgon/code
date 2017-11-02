@@ -16,6 +16,9 @@ public interface CodeBlockStatement extends CodeBlock, CodeStatement {
   CodeBlock getParent();
 
   @Override
+  CodeBlockStatement getImmutable();
+
+  @Override
   CodeBlockStatement copy();
 
 }

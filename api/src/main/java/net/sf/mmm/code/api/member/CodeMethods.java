@@ -34,6 +34,9 @@ public interface CodeMethods<M extends CodeMethod> extends CodeOperations<M>, Co
   M add(String name);
 
   @Override
+  CodeMethods<M> getImmutable();
+
+  @Override
   CodeMethods<M> copy();
 
 }

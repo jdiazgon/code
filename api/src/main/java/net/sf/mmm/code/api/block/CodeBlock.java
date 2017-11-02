@@ -7,8 +7,8 @@ import java.util.List;
 import net.sf.mmm.code.api.expression.CodeVariable;
 import net.sf.mmm.code.api.item.CodeItemWithVariables;
 import net.sf.mmm.code.api.node.CodeNodeItem;
-import net.sf.mmm.code.api.statement.CodeStatement;
 import net.sf.mmm.code.api.statement.CodeLocalVariable;
+import net.sf.mmm.code.api.statement.CodeStatement;
 
 /**
  * {@link CodeStatement} for a block that groups multiple {@link #getStatements() statements}.
@@ -39,6 +39,9 @@ public abstract interface CodeBlock extends CodeNodeItem, CodeItemWithVariables 
    *         braces). May be {@link List#isEmpty() empty} but never {@code null}.
    */
   List<CodeStatement> getStatements();
+
+  @Override
+  CodeBlock getImmutable();
 
   @Override
   CodeBlock copy();

@@ -36,6 +36,9 @@ public interface CodeParameterizedType extends CodeGenericType, CodeMutableItemW
   ParameterizedType getReflectiveObject();
 
   @Override
+  CodeParameterizedType getImmutable();
+
+  @Override
   CodeParameterizedType copy();
 
 }

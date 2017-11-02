@@ -37,6 +37,9 @@ public interface CodeConstructor extends CodeOperation {
   Constructor<?> getReflectiveObject();
 
   @Override
+  CodeConstructor getImmutable();
+
+  @Override
   CodeConstructor copy();
 
 }

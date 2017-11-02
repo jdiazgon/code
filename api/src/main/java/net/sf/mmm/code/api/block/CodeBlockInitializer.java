@@ -30,4 +30,11 @@ public interface CodeBlockInitializer extends CodeBlock {
    * @throws ReadOnlyException if {@link #isImmutable() immutable}.
    */
   void setStatic(boolean isStatic);
+
+  @Override
+  CodeBlockInitializer getImmutable();
+
+  @Override
+  CodeBlockInitializer copy();
+
 }

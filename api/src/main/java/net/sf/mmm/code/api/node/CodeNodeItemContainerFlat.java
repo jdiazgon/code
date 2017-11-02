@@ -15,6 +15,9 @@ import net.sf.mmm.code.api.item.CodeItem;
 public abstract interface CodeNodeItemContainerFlat<I extends CodeItem> extends CodeNodeItemContainer<I> {
 
   @Override
+  CodeNodeItemContainerFlat<I> getImmutable();
+
+  @Override
   CodeNodeItemContainerFlat<I> copy();
 
 }

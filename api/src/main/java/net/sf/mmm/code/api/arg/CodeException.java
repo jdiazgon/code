@@ -24,6 +24,9 @@ public interface CodeException extends CodeOperationArg {
   AnnotatedType getReflectiveObject();
 
   @Override
+  CodeException getImmutable();
+
+  @Override
   CodeException copy();
 
 }

@@ -4,6 +4,7 @@ package net.sf.mmm.code.api.item;
 
 import net.sf.mmm.code.api.CodePathElement;
 import net.sf.mmm.code.api.node.CodeNodeItem;
+import net.sf.mmm.code.api.type.CodeReadableType;
 import net.sf.mmm.code.api.type.CodeType;
 
 /**
@@ -21,6 +22,6 @@ public abstract interface CodeItemWithDeclaringType extends CodeItem {
    *         declaring type can never be changed.
    * @see CodeType#getDeclaringType()
    */
-  CodeType getDeclaringType();
+  CodeReadableType getDeclaringType();
 
 }

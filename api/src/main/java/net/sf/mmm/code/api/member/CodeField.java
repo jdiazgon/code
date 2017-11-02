@@ -39,6 +39,9 @@ public abstract interface CodeField extends CodeMember, CodeMutableItemWithType,
   Field getReflectiveObject();
 
   @Override
+  CodeField getImmutable();
+
+  @Override
   CodeField copy();
 
 }
